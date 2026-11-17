@@ -26,6 +26,7 @@ EchoMusic 已经内置同一套接口（`src/renderer/api/user.ts` 的 `claimDay
 
 1. 将 `kugou-daily-checkin/` 复制到 EchoMusic 插件目录：
    - Windows：`%APPDATA%\echo-music\plugins`
+   - 也可以先克隆仓库：`git clone https://github.com/charlisang/kugou-daily-checkin.git`
 2. 在插件管理启用「酷狗每日签到」。
 3. 默认启用自动签到；可在插件设置中关闭，或在侧栏页面手动「立即签到」。
 
@@ -38,6 +39,7 @@ EchoMusic 已经内置同一套接口（`src/renderer/api/user.ts` 的 `claimDay
   - `ctx.kugou.user.upgradeDayVip()`
   - `ctx.kugou.user.getYouthUnionVip()`
 - 插件不读取、不保存账号密码或 Cookie。
+- 签到结果（含当前账号昵称）只写入本机插件存储用于页面展示，不会发送到其他服务。
 
 ## 注意事项
 
