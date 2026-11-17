@@ -2,18 +2,6 @@
 
 EchoMusic 插件：每天自动领取酷狗畅听 VIP，可选升级当天概念版 VIP；使用 EchoMusic 已登录的酷狗账号，不需要额外填 Cookie 或密码。
 
-## 背景：MoeKoeMusic 怎么做的
-
-MoeKoeMusic 的签到逻辑在 `src/views/Library.vue` 和 `src/components/player/Helpers.js`：
-
-- 手动「签到」（旧接口）：`GET /youth/vip`，返回 `award_vip_hour`，代码已标注“该接口将在未来被移除”。
-- 每日 VIP：`GET /youth/day/vip?receive_day=YYYY-MM-DD`，服务端映射到酷狗 `/youth/v1/recharge/receive_vip_listen_song`。
-- 概念版升级：`GET /youth/day/vip/upgrade`，映射到 `/youth/v1/listen_song/upgrade_vip_reward`。
-- 自动执行：播放器挂载和开始播放时调用 `getVip()`；登录后每天只执行一次，用 `localStorage.lastVipRequestDate` 去重；先领畅听 VIP，500ms 后尝试升级概念版。
-- 错误码：`131001` 今日已签到，`20028` 账号风控，`20018` 登录过期。
-
-EchoMusic 已经内置同一套接口（`src/renderer/api/user.ts` 的 `claimDayVip`、`upgradeDayVip`），并且请求会自动注入当前登录态，所以插件只需要调用 `ctx.kugou.user.*`。
-
 ## 功能
 
 - 应用启动后自动签到；同一天只自动尝试一次，跨天自动重试。
