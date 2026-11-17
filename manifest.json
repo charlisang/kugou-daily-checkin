@@ -1,0 +1,15 @@
+{
+  "id": "kugou-daily-checkin",
+  "name": "酷狗每日签到",
+  "version": "1.0.0",
+  "description": "每天自动领取酷狗畅听 VIP，可选升级概念版 VIP；使用 EchoMusic 内置酷狗登录态。",
+  "author": "charlisang",
+  "icon": "icon.svg",
+  "main": "index.js",
+  "capabilities": {
+    "kugouApi": true
+  },
+  "requires": {
+    "echoMusicVersion": ">=2.3.1"
+  }
+}

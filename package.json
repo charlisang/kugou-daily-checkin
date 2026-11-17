@@ -1,0 +1,38 @@
+{
+  "name": "kugou-daily-checkin",
+  "version": "1.0.0",
+  "description": "EchoMusic 插件：每天自动领取酷狗畅听 VIP，可选升级概念版 VIP。",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "author": "charlisang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlisang/kugou-daily-checkin.git"
+  },
+  "homepage": "https://github.com/charlisang/kugou-daily-checkin#readme",
+  "bugs": {
+    "url": "https://github.com/charlisang/kugou-daily-checkin/issues"
+  },
+  "keywords": [
+    "echomusic",
+    "echomusic-plugin",
+    "kugou",
+    "checkin"
+  ],
+  "files": [
+    "index.js",
+    "manifest.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check index.js && node -e \"JSON.parse(require('fs').readFileSync('manifest.json','utf8'))\""
+  }
+}
